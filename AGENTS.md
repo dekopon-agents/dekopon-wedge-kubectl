@@ -17,8 +17,8 @@ Each supported form proposes exactly one separately authorized capability.
 ## Boundaries particular to kubectl
 
 - The command surface is closed to the readiness endpoint, the named Argo Application read and
-  refresh annotation, and the named Deployment read. Rollout status is an alias for the Deployment
-  read. Each capability has its own id, manifest entry and grant.
+  refresh annotation, and the named Deployment read. Each capability has its own id, manifest
+  entry and grant.
 - Validate name and namespace grammar. The API origin (`baseUrl`) and Argo namespace
   (`argoNamespace`) are owner settings. Require the Application `-n` to match `argoNamespace`.
   Paths, methods, annotation keys and output formats are fixed by capability.
@@ -27,9 +27,6 @@ Each supported form proposes exactly one separately authorized capability.
 - Project only the named status fields. Transport failure, non-2xx status and malformed
   response are typed errors. Secret, ConfigMap, exec, log and generic API forms are outside the
   command surface. Use offline component tests for all verification in this repository.
-- Cedar constraints and Kubernetes RBAC in `examples/` are references for the later homelab
-  pin. Homelab grants name all four capabilities for `rpi-coordinator` and the three reads for
-  the coordinator agent. Each added capability stays excluded until a grant names it.
 
 ## Build and verify
 
@@ -57,7 +54,7 @@ The toolchain and wasm-tools 1.259.0 are pinned for reproducible builds.
   with `expect` and native-only tests say so in their names.
 - Assert every request's full URI, method and body, exactly one call and the absence of guest
   `authorization`. Use the SDK testkit for component and native evidence.
-- Update the examples when a capability or setting changes. Leave `CHANGELOG.md` to release prep
-  and record user-visible changes in physical `Changelog:` commit trailers.
+- Leave `CHANGELOG.md` to release prep and record user-visible changes in physical `Changelog:`
+  commit trailers.
 - Move `dekopon-provider-sdk` and `dekopon-provider-sdk-testkit` together with exact version pins.
   Regenerate `Cargo.lock` with Cargo.
