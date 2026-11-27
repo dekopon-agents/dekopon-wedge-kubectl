@@ -689,6 +689,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "dekopon-kubectl-provider"
+version = "0.0.0"
+dependencies = [
+ "clap",
+ "dekopon-provider-sdk",
+ "dekopon-provider-sdk-testkit",
+ "schemars",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "dekopon-provider-sdk"
 version = "0.64.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -758,18 +770,6 @@ dependencies = [
  "serde_json",
  "tracing",
  "tracing-opentelemetry",
-]
-
-[[package]]
-name = "dekopon-wedge-kubectl"
-version = "0.0.0"
-dependencies = [
- "clap",
- "dekopon-provider-sdk",
- "dekopon-provider-sdk-testkit",
- "schemars",
- "serde",
- "serde_json",
 ]
 
 [[package]]

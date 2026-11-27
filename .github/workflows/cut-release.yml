@@ -25,7 +25,7 @@ jobs:
     with:
       tags: ${{ inputs.tags }}
       sha: ${{ inputs.sha }}
-      package: dekopon-wedge-kubectl
+      package: dekopon-kubectl-provider
       dry_run: ${{ inputs.dry_run }}
     secrets:
       DEKOPON_RELEASE_APP_ID: ${{ secrets.DEKOPON_RELEASE_APP_ID }}

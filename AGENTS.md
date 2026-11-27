@@ -38,7 +38,7 @@ git clone --depth 1 https://github.com/dekopon-agents/provider-workflows ../prov
 cargo fmt --all --check
 cargo deny --all-features check bans licenses sources advisories
 cargo clippy --locked --workspace --all-targets -- -D warnings
-cargo clippy --locked --package dekopon-wedge-kubectl --lib --target wasm32-unknown-unknown -- -D warnings
+cargo clippy --locked --package dekopon-kubectl-provider --lib --target wasm32-unknown-unknown -- -D warnings
 cargo doc --locked --workspace --no-deps
 ../provider-workflows/build.sh
 DEKOPON_PROVIDER_COMPONENT="$PWD/kubectl-provider.wasm" cargo test --locked --workspace

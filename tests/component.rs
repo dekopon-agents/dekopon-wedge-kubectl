@@ -1,7 +1,7 @@
+use dekopon_kubectl_provider::Kubectl;
 use dekopon_provider_sdk::provider::{Request, Response, method};
 use dekopon_provider_sdk::{CommandRunOutcome, provider};
 use dekopon_provider_sdk_testkit::{Harness, HttpScript, Native};
-use dekopon_wedge_kubectl::Kubectl;
 use serde_json::json;
 
 const HOST: &str = "kubernetes.example.test";
